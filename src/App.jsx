@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { TfiAngleLeft, TfiAngleRight } from "react-icons/tfi";
+import { TfiAngleLeft, TfiAngleRight } from 'react-icons/tfi';
 
 const baseUrl = 'https://pokeapi.co/api/v2';
 
@@ -48,34 +48,36 @@ function App() {
     <div>
       <h1>PokeDex</h1>
       <main>
-        <button type="button" onClick={decrementPokemonId}>Previous</button>
+        <TfiAngleLeft className="icons" type="button" onClick={decrementPokemonId} />
         {pokemonData !== null ? (
           <div>
-            <img src={pokemonData.sprites.front_default} alt={`front facing ${pokemonData.name}`} />
-            <h2>{pokemonData.name}</h2>
-            <div className="moveset-container">
+            <div className="pokemon-name-container">
+              <img src={pokemonData.sprites.front_default} alt={`front facing ${pokemonData.name}`} />
+              <h2>{pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</h2>
+            </div>
             <h3>Movesets</h3>
-            <ul>
-              <li>
-                {pokemonData.moves.map((move, index) => (
-                  <div key={index}>
-                    {move.move.name}
-                    {' '}
-                    can be learned at Level
-                    {' '}
-                    {move.version_group_details[0].level_learned_at}
-                    {' '}
-                    through
-                    {' '}
-                    {move.version_group_details[0].move_learn_method.name}
-                  </div>
-                ))}
-              </li>
-            </ul>
+            <div className="moveset-container">
+              <ul>
+                <li>
+                  {pokemonData.moves.map((move, index) => (
+                    <div key={index} className="move">
+                      {move.move.name.charAt(0).toUpperCase() + move.move.name.slice(1)}
+                      {' '}
+                      can be learned at Level
+                      {' '}
+                      {move.version_group_details[0].level_learned_at}
+                      {' '}
+                      through
+                      {' '}
+                      {move.version_group_details[0].move_learn_method.name}
+                    </div>
+                  ))}
+                </li>
+              </ul>
             </div>
           </div>
         ) : <span>Loading...</span>}
-        <button type="button" onClick={incrementPokemonId}>Next</button>
+        <TfiAngleRight className="icons" type="button" onClick={incrementPokemonId} />
       </main>
     </div>
   );
