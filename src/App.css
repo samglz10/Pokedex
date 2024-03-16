@@ -6,10 +6,31 @@
     font-variation-settings:
       "slnt" 0;
   }
+  html{
+    height: 100vh;
+    width: 100vw;
+  }
   
 main {
   display: flex;
+
 }
 main > button{
   margin: auto;
+}
+
+ul {
+  list-style-type: none; 
+  padding: 0;
+  margin: 0;
+}
+
+img{
+  display: flex;
+ 
+}
+.moveset-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
