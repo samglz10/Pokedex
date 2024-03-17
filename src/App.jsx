@@ -57,23 +57,21 @@ function App() {
             </div>
             <h3>Movesets</h3>
             <div className="moveset-container">
-              <ul>
-                <li>
-                  {pokemonData.moves.map((move, index) => (
-                    <div key={index} className="move">
-                      {move.move.name.charAt(0).toUpperCase() + move.move.name.slice(1)}
-                      {' '}
-                      can be learned at Level
-                      {' '}
-                      {move.version_group_details[0].level_learned_at}
-                      {' '}
-                      through
-                      {' '}
-                      {move.version_group_details[0].move_learn_method.name}
-                    </div>
-                  ))}
-                </li>
-              </ul>
+              <ol>
+                {pokemonData.moves.map((move, index) => (
+                  <li key={index} className="move">
+                    {move.move.name.charAt(0).toUpperCase() + move.move.name.slice(1)}
+                    {' '}
+                    can be learned at Level
+                    {' '}
+                    {move.version_group_details[0].level_learned_at}
+                    {' '}
+                    through
+                    {' '}
+                    {move.version_group_details[0].move_learn_method.name}
+                  </li>
+                ))}
+              </ol>
             </div>
           </div>
         ) : <span>Loading...</span>}

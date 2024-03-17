@@ -10,7 +10,11 @@
     height: 100vh;
     width: 100vw;
   }
-  
+body{
+  height: auto;
+  width: 100%;
+  margin: 0;
+}
 main {
   display: flex;
   align-items: center;
@@ -26,17 +30,22 @@ h2{
 }
 h3{
   text-align: center;
+  margin: auto;
+  margin: 10px 0 10px 0;
 }
 
-ul {
-  list-style-type: none; 
+ol {
   padding: 0;
-  margin: 10px;
+  position: relative;
 }
-
+li {
+  position: static
+}
 img{
   margin: 0;
   text-align: center;
+  height: 300px;
+  width: 300px;
 
 }
 .move{
@@ -46,12 +55,14 @@ img{
   display: flex;
   align-items: center;
   flex-direction: column;
-  width:fit-content;
-  box-sizing: border-box;
-  height: 25vh;
-  width: auto;
+  box-sizing:content-box;
+  height: 35vh;
+  width: 30vw;
   overflow: hidden auto;
   text-align: center;
+  justify-content: center;
+  border: 5px dashed black ;
+  padding: 10px;
  
 }
 .pokemon-name-container{
@@ -59,6 +70,8 @@ img{
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  align-items: center;
+  
 }
 
 .icons{
