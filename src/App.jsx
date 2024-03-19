@@ -42,11 +42,11 @@ function App() {
           <div>
             <div className="pokemon-name-container">
               <img src={pokemonData.sprites.front_default} alt={`front facing ${pokemonData.name}`} />
-              <h2> 
+              <h2>
                 {pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}
                 {' '}
               </h2>
-             {/**  <span>
+              {/**  <span>
                 {pokemonData.types[0].type.name}
                 {' '}
                 and
